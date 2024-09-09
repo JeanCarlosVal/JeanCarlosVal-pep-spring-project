@@ -10,8 +10,6 @@ import com.example.entity.Message;
 import com.example.repository.AccountRepository;
 import com.example.repository.MessageRepository;
 
-import antlr.debug.MessageAdapter;
-
 @Service
 public class MessageService {
 
@@ -101,7 +99,7 @@ public class MessageService {
 
     }
 
-    public List<Message> getAllMessagesFromUser(int id){
+    public List<Message> getAllMessagesFromUser(int id) {
         return messageRepository.findAllByPostedBy(id);
     }
 

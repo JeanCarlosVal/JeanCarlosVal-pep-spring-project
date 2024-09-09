@@ -2,7 +2,6 @@ package com.example.controller;
 
 import java.util.List;
 
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -122,7 +121,7 @@ public class SocialMediaController {
     }
 
     @GetMapping("accounts/{account_id}/messages")
-    public @ResponseBody ResponseEntity<List<Message>> getAllMessagesFromUser(@PathVariable int account_id){
+    public @ResponseBody ResponseEntity<List<Message>> getAllMessagesFromUser(@PathVariable int account_id) {
         return ResponseEntity.status(200).body(messageService.getAllMessagesFromUser(account_id));
     }
 
