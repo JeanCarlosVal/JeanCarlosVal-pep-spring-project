@@ -2,6 +2,7 @@ package com.example.controller;
 
 import java.util.List;
 
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -10,9 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.containers.AccountContainer;
@@ -120,6 +119,11 @@ public class SocialMediaController {
         }
 
         return ResponseEntity.status(200).body(1);
+    }
+
+    @GetMapping("accounts/{account_id}/messages")
+    public @ResponseBody ResponseEntity<List<Message>> getAllMessagesFromUser(@PathVariable int account_id){
+        return ResponseEntity.status(200).body(messageService.getAllMessagesFromUser(account_id));
     }
 
     /**
