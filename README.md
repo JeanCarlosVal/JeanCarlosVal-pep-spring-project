@@ -28,20 +28,6 @@ timePostedEpoch long,
 foreign key (postedBy) references Account(accountId)
 ```
 
-# Spring Technical Requirement
-
-## Project must leverage the Spring Boot Framework
-
-Java classes have been provided, but your entire project MUST leverage the Spring framework.
-In addition to functional test cases, "SpringTest" will verify that you have leveraged the Spring framework, Spring Boot, Spring MVC, and Spring Data.
-SpringTest will verify the following
-
- - That you have, by any means, have a bean for the AccountService, MessageService, AccountRepository, MessageRepository, and SocialMediaController classes
- - That AccountRepository and MessageRepository are working JPARepositories based on their corresponding Account and Message entities
- - That your Spring Boot app leverages MVC by checking for Spring's default error message structure.
- 
-The app will already be a Spring Boot app with a valid application.properties and valid database entities at the start.
-
 # User Stories
 
 ## 1: Our API should be able to process new User registrations.
